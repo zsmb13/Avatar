@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink" width="1000" height="1000">
+	<defs>
+		<filter id="inset-shadow">
+			<feOffset dx="0" dy="0"/>
+			<feGaussianBlur stdDeviation="20"  result="offset-blur"/>
+			<feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+			<feFlood flood-color="black" flood-opacity="1" result="color"/>
+			<feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+			<feComponentTransfer in="shadow" result="shadow">
+				<feFuncA type="linear" slope=".65"/>
+			</feComponentTransfer>
+		</filter>
+	</defs>
+
+	<rect width="1000" height="1000" fill="#212121" />
+	
+	<polygon points="140,140 762,140 140,762" fill="#0277BD" />
+	<polygon points="140,140 762,140 140,762" filter="url(#inset-shadow)"/>
+	
+	<polygon points="239,859 861,239 861,861" fill="#FFC107" />
+	<polygon points="239,859 861,239 861,861" filter="url(#inset-shadow)" />
+
+</svg>
